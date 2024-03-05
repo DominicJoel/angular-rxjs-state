@@ -1,0 +1,25 @@
+@import "../../assets/stylesheets/base/colors";
+
+div {
+  padding: 8px;
+}
+
+label {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #304ffe;
+}
+
+p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: $text-color;
+  margin: 0;
+}

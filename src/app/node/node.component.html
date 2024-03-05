@@ -1,0 +1,34 @@
+<div class="wrapper">
+  <article class="head">
+    <h1 class="name">
+      {{ node.name || unknownNode }}
+    </h1>
+    <div class="toolbar">
+      <app-status [loading]="node.loading" [online]="node.online"></app-status>
+      <button
+        class="expander"
+        [ngClass]="{ expanded: expanded }"
+        (click)="handleToogleExpand(node); loadNodeBlocks(node.url)"
+        [disabled]="node.loading || !node.online"
+      ></button>
+    </div>
+  </article>
+  <div class="body">
+    <span class="url">
+      {{ node.url }}
+    </span>
+  </div>
+  <div *ngIf="expanded">
+    <div *ngIf="!(store.state$ | async).loading; else loading">
+      <div
+        *ngFor="let block of (store.state$ | async).blocks"
+        class="blocks-wrapper"
+      >
+        <app-block [block]="block"> </app-block>
+      </div>
+    </div>
+    <ng-template #loading>
+      <h4 class="loading-data">Loading ...</h4>
+    </ng-template>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+@import "../../assets/stylesheets/base/colors";
+
+.wrapper {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+  background: #f8f8f8;
+  border-radius: 5px;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name {
+  margin-top: 0;
+  margin-bottom: 4px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.44px;
+  color: $text-color;
+}
+
+.url {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.25px;
+  color: $text-color;
+  opacity: 0.54;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: right;
+}
+
+.expander {
+  margin-left: 10px;
+  margin-top: 7px;
+
+  background: none;
+  border: none;
+  position: relative;
+
+  cursor: pointer;
+  outline: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+  }
+
+  &:not(.expanded) {
+    &::before {
+      border-bottom: 7px solid $text-color;
+    }
+  }
+
+  &.expanded {
+    &::before {
+      border-top: 7px solid $text-color;
+    }
+  }
+}
+
+.blocks-wrapper {
+  margin: 4px 0;
+  color: $danger-color;
+  font-weight: 700;
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 2px;
+}
+
+.loading-data {
+  text-align: center;
+  margin: 31px;
+  font-size: 20px;
+  font-style: bold;
+  font-size: 18px;
+  line-height: 20px;
+  align-items: center;
+  letter-spacing: 00.25px;
+  color: $text-color;
+}
